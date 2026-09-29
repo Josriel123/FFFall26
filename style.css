@@ -137,3 +137,25 @@ footer {
     padding-top: 20px;
     border-top: 1px solid #e2e8f0;
 }
+
+@media (max-width: 600px) {
+    nav ul {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        padding: 16px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+}
