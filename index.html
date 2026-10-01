@@ -16,6 +16,7 @@
         <header>
             <h1>Leo the Space Explorer</h1>
             <p>A personal wiki and profile of a deep-space scout and his companion.</p>
+            <button id="mode-btn" class="action-btn">Switch to Dark Mode</button>
 
             <!-- Navigation -->
             <nav>
@@ -47,6 +48,12 @@
                 <p>
                     The <em>Starlight</em> is a small, solar-powered scout ship. It has strong landing legs, an automated airlock, and engines built to fly through asteroid fields safely.
                 </p>
+
+                <div class="scanner-box">
+                    <h3>Mission Scanner</h3>
+                    <p id="scan-status">Scanner on standby. Click below to scan deep space.</p>
+                    <button id="scan-btn" class="action-btn">Scan Next Sector</button>
+                </div>
             </section>
 
             <hr>
@@ -58,7 +65,8 @@
                 </p>
 
                 <h3>Gear Checklist</h3>
-                <ul>
+                <button id="toggle-gear-btn" class="action-btn">Hide Gear Checklist</button>
+                <ul id="gear-list">
                     <li><strong>Solar Spacesuit:</strong> A warm, lightweight white suit powered by sunlight.</li>
                     <li><strong>Sparky the Robot Dog:</strong> A loyal companion that can scan rocks and shine a light in dark caves.</li>
                     <li><strong>Handheld Scanner:</strong> A pocket device used to find water and safe paths.</li>
@@ -139,5 +147,6 @@
 
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
