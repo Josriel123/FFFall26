@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore uncharted worlds, crew profiles, and deep space mission telemetry with Leo the Space Explorer and Sparky.">
+    <title>Leo the Space Explorer | Project 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <header class="site-header">
+            <h1>Leo the Space Explorer</h1>
+            <p class="tagline">Galactic Field Log & Expedition Archive</p>
+            <button id="theme-btn" class="theme-toggle">Switch to Dark Mode</button>
+
+            <!-- Navigation -->
+            <nav class="gridded-nav">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#missions">Missions</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#calculator">Gravity Calc</a></li>
+                    <li><a href="#scanner">Scanner</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+
+            <section id="about" class="about-section">
+                <h2>Expedition Overview</h2>
+                <div class="bio-card">
+                    <p>
+                        Leo grew up on a small moon colony surrounded by telescopes and repair docks. Fascinated by ancient star charts and mechanical tinkering, he worked for years to restore a decommissioned yellow scout ship named the <em>Starlight</em>.
+                    </p>
+                    <p>
+                        Today, Leo travels across distant planetary sectors to survey unexplored terrain, study rare minerals, and respond to emergency distress beacons. He is accompanied by <strong>Sparky</strong>, an autonomous robot dog built from recycled satellite parts who acts as his scout, geological sensor, and loyal companion.
+                    </p>
+                </div>
+            </section>
+
+            <section id="missions" class="missions-section">
+                <h2>Mission Dossiers</h2>
+                <p class="section-lead">Field logs recorded across recent sector surveys:</p>
+
+                <div class="missions-grid">
+                    <article class="mission-card">
+                        <div class="card-header">
+                            <span class="badge blue-badge">Mission 01</span>
+                            <time datetime="2025-04-14">Apr 14, 2025</time>
+                        </div>
+                        <h3>The Blue Moon Rescue</h3>
+                        <p class="sector-coord">Sector: Asteroid Belt Orion-9</p>
+                        <p>
+                            Intercepted a damaged cargo vessel caught in an asteroid drift. Leo piloted the <em>Starlight</em> through heavy debris while Sparky secured the external towing latch to pull the crew to safety.
+                        </p>
+                    </article>
+
+                    <article class="mission-card">
+                        <div class="card-header">
+                            <span class="badge green-badge">Mission 02</span>
+                            <time datetime="2025-09-22">Sep 22, 2025</time>
+                        </div>
+                        <h3>Finding the Crystal Cave</h3>
+                        <p class="sector-coord">Sector: Planet Frost (Sub-Zero Ridge)</p>
+                        <p>
+                            Descended into deep sub-surface glaciers to locate bioluminescent emerald crystals. The formations emit a stable electromagnetic pulse now studied for clean spacecraft energy.
+                        </p>
+                    </article>
+
+                    <article class="mission-card">
+                        <div class="card-header">
+                            <span class="badge amber-badge">Mission 03</span>
+                            <time datetime="2026-02-18">Feb 18, 2026</time>
+                        </div>
+                        <h3>The Sandstorm Escape</h3>
+                        <p class="sector-coord">Sector: Martian Highlands</p>
+                        <p>
+                            Trapped inside an unexpected iron-dust storm with zero visibility. Sparky utilized low-frequency radar pulses to guide the crew safely along a narrow canyon pass.
+                        </p>
+                    </article>
+
+                    <article class="mission-card">
+                        <div class="card-header">
+                            <span class="badge purple-badge">Mission 04</span>
+                            <time datetime="2026-06-30">Jun 30, 2026</time>
+                        </div>
+                        <h3>The Deep Crater Discovery</h3>
+                        <p class="sector-coord">Sector: Lunar Rim Basin</p>
+                        <p>
+                            Uncovered subterranean mineral water reserves sealed beneath millions of years of volcanic basalt. The site is now marked as a future refueling and biosphere outpost.
+                        </p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="gallery" class="gallery-section">
+                <h2>Visual Field Archive</h2>
+                <p class="section-lead">Photographic records captured during planetary expeditions:</p>
+
+                <div class="filter-bar">
+                    <button class="filter-btn active" data-filter="all">All Photos</button>
+                    <button class="filter-btn" data-filter="crew">Crew & Ship</button>
+                    <button class="filter-btn" data-filter="expeditions">Expeditions</button>
+                </div>
+
+                <div class="gallery-grid">
+                    <figure class="gallery-card" data-category="crew">
+                        <img src="images/leo.jpg" alt="Leo the space explorer wearing his white solar spacesuit with planets and stars in the background">
+                        <figcaption>
+                            <strong>Leo the Explorer</strong>
+                            <span>Prepared for atmospheric departure in his lightweight solar spacesuit.</span>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="gallery-card" data-category="crew">
+                        <img src="images/sparky.jpg" alt="Sparky the robot dog with glowing blue eyes standing on rocky terrain">
+                        <figcaption>
+                            <strong>Sparky the Scout Dog</strong>
+                            <span>Scanning mineral deposits and cavern paths across the terrain.</span>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="gallery-card" data-category="crew">
+                        <img src="images/starlight.jpg" alt="The yellow scout spaceship Starlight parked on an extraterrestrial launch pad">
+                        <figcaption>
+                            <strong>The Starlight</strong>
+                            <span>Solar-powered exploration craft stationed on the sector landing platform.</span>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="gallery-card" data-category="expeditions">
+                        <img src="images/mars_canyon.jpg" alt="Astronaut walking through a deep red canyon trail under a starry sky with two moons">
+                        <figcaption>
+                            <strong>Martian Canyon Pass</strong>
+                            <span>Navigating towering red sandstone ridges during the dust storm survey.</span>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="gallery-card" data-category="expeditions">
+                        <img src="images/crystal_cave.jpg" alt="Explorer holding a torch inside an icy blue cavern with giant glowing green crystals">
+                        <figcaption>
+                            <strong>Emerald Ice Caverns</strong>
+                            <span>Bioluminescent crystals glowing inside the glacial depths of Planet Frost.</span>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="gallery-card" data-category="expeditions">
+                        <img src="images/moon_base.jpg" alt="Panoramic lunar research outpost with glass dome and orbiting space station under colorful nebulae">
+                        <figcaption>
+                            <strong>Lunar Outpost & Station</strong>
+                            <span>Central communications dome and orbital station monitoring deep space traffic.</span>
+                        </figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section id="calculator" class="tool-section">
+                <h2>Celestial Gravity Calculator</h2>
+                <p class="section-lead">Calculate your body weight and jump ability across different planetary destinations:</p>
+
+                <div class="tool-box">
+                    <div class="calc-form">
+                        <div class="form-group">
+                            <label for="weight-input">Enter Your Earth Weight (lbs):</label>
+                            <input type="number" id="weight-input" min="1" max="1000" placeholder="e.g. 150">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="destination-select">Select Destination:</label>
+                            <select id="destination-select">
+                                <option value="0.166">The Moon (0.17g)</option>
+                                <option value="0.379">Mars (0.38g)</option>
+                                <option value="0.820">Planet Frost (0.82g)</option>
+                                <option value="0.134">Europa (0.13g)</option>
+                                <option value="2.528">Jupiter Atmosphere (2.53g)</option>
+                            </select>
+                        </div>
+
+                        <button id="calc-btn" class="action-btn">Calculate Telemetry</button>
+                    </div>
+
+                    <div id="calc-result" class="calc-output">
+                        <p class="output-placeholder">Enter your weight and choose a world to calculate telemetry.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="scanner" class="tool-section">
+                <h2>Deep Space Sector Scanner</h2>
+                <p class="section-lead">Tune the Starlight's sensors to intercept active deep-space sector broadcasts:</p>
+
+                <div class="tool-box">
+                    <div class="scanner-display">
+                        <div class="scanner-header">
+                            <span class="status-indicator"></span>
+                            <span id="scanner-channel">Channel: Standby (1420.4 MHz)</span>
+                        </div>
+                        <p id="scanner-output" class="scanner-text">
+                            Sensor array idle. Click below to sweep the sector for incoming signals.
+                        </p>
+                    </div>
+                    <button id="scan-btn" class="action-btn">Sweep Next Sector</button>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="site-footer">
+            <p><small>&copy; 2026 Joel Bueno. Front End Fundamentals &mdash; Project 1.</small></p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
