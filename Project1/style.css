@@ -571,9 +571,19 @@ body.dark-theme .calc-result-note {
     margin-top: 40px;
 }
 
+.disclosure-note {
+    margin-top: 6px;
+    color: #94a3b8;
+    font-size: 0.82rem;
+}
+
 body.dark-theme .site-footer {
     border-top-color: #1e293b;
     color: #94a3b8;
+}
+
+body.dark-theme .disclosure-note {
+    color: #64748b;
 }
 
 @media (max-width: 860px) {
