@@ -1,4 +1,4 @@
-# Project 1: Leo the Space Explorer - Galactic Field Log
+# The Mesozoic Archive: Prehistoric Dinosaur Field Guide
 
 * **Student:** Joel Bueno
 * **Course:** CIM 343 / 643 - Front End Fundamentals (Section EF)
@@ -10,15 +10,18 @@
 ## AI Tool & Prompt Disclosure
 
 * **AI Tool Utilized:** Google Gemini
-* **Purpose:** Brainstorming the creative website narrative/worldbuilding and generating thematic illustration assets.
+* **Purpose:** Brainstorming the creative website topic/worldbuilding (prehistoric Mesozoic field guide and paleontological archive) and generating high-resolution illustration assets for dinosaur species.
 * **Brainstorming Prompts:**
-  > "Brainstorm an expanded expedition archive and mission dispatch concept for Leo the Space Explorer and Sparky. Include ideas for scientific tools, planetary telemetry, and deep-space sector broadcasts that can be built into an interactive front-end website."
+  > "Brainstorm a creative concept for a prehistoric dinosaur field guide and Mesozoic expedition website. Include ideas for paleontological tools, geological era overviews, dinosaur species cards, comparative biometric scale calculations, and acoustic roar simulations that can be built into a responsive front-end website."
 * **Image Generation Prompts:**
-  > "Vibrant colorful digital comic illustration of an alien ice cavern on Planet Frost, glowing emerald green crystal clusters emerging from turquoise glaciers..."
-  > "Vibrant colorful digital illustration of a Martian red canyon desert on an alien planet, towering red sandstone cliffs, winding trails under dual moons..."
-  > "Vibrant colorful digital comic illustration of an orbital space station and futuristic scout dome outpost on a crater moon..."
+  > "Vibrant colorful digital illustration of a mighty Tyrannosaurus Rex dinosaur in a lush prehistoric Cretaceous jungle with giant ferns, ancient cycad trees, sunbeams filtering through mist..."
+  > "Vibrant colorful digital illustration of a mighty horned Triceratops dinosaur grazing peacefully in a lush prehistoric river valley with giant ferns..."
+  > "Vibrant colorful digital illustration of agile feathered Velociraptor dinosaurs stalking across a prehistoric rocky canyon ridge..."
+  > "Vibrant colorful digital illustration of a gigantic long-necked Brachiosaurus dinosaur reaching into the high canopy of giant prehistoric conifer trees in a lush Jurassic floodplain..."
+  > "Vibrant colorful digital illustration of a Spinosaurus dinosaur with a large colorful back sail, standing along a prehistoric muddy river bank..."
+  > "Vibrant colorful digital illustration of a majestic Pteranodon Pterodactyl flying over towering prehistoric coastal cliffs and ancient blue ocean..."
 * **Process & Implementation:**
-  I used AI to brainstorm the expanded creative concept and generate high-resolution visual assets that matched the visual theme of Assignment 1. All semantic HTML5 markup, CSS styling, responsive Grid architectures, and JavaScript interactive logic were implemented and structured by me to meet every rubric specification.
+  I used AI to brainstorm the prehistoric theme and generate the visual assets. All semantic HTML5 markup, CSS styling, responsive multi-column Grid layouts, and interactive JavaScript functionality were designed, structured, and implemented by me to fulfill all project rubric requirements.
 
 ---
 
@@ -28,24 +31,25 @@
    - Standard `<!DOCTYPE html>`, `<html lang="en">`, and `<head>` configuration.
    - Includes `<title>` and `<meta name="description">`.
    - Full semantic HTML structure: `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<figure>`, `<figcaption>`, and `<footer>`.
-   - All 6 images contain descriptive `alt` tags.
+   - 6 high-resolution dinosaur images with complete, descriptive `alt` tags.
 
 2. **CSS Styling:**
-   - Styled over 10 native HTML tags (`body`, `h1`, `h2`, `h3`, `p`, `a`, `button`, `section`, `time`, `input`, `select`, `label`, `figcaption`, `footer`).
-   - Styled multiple distinct classes (`.badge`, `.sector-coord`, `.bio-card`, `.filter-btn`, `.active`, `.action-btn`, `.calc-output`, `.scanner-display`, etc.).
-   - Images styled with uniform card aspect ratios, rounded corners, and hover transitions.
+   - Styled over 12 native HTML tags (`body`, `h1`, `h2`, `h3`, `p`, `a`, `button`, `section`, `time`, `input`, `select`, `label`, `figcaption`, `footer`).
+   - Styled multiple distinct classes (`.era-pill`, `.climate-note`, `.dino-badge`, `.carnivore-badge`, `.herbivore-badge`, `.flying-badge`, `.filter-btn`, `.active`, `.action-btn`, `.sound-select-btn`, etc.).
+   - Images styled with uniform card aspect ratios, rounded borders, and subtle hover zoom animations.
+   - Earthy Mesozoic aesthetic with a toggleable Volcanic Night theme.
 
 3. **Gridded Layouts:**
    - **Gridded Navigation:** 5-column CSS Grid navigation bar.
-   - **Gridded Section 1 (Multi-Column Dossier):** 2-column responsive mission card grid.
-   - **Gridded Section 2 (Picture Gallery):** 3-column responsive photo gallery grid.
+   - **Gridded Section 1 (Geologic Eras Dossier):** 3-column responsive geological time period grid.
+   - **Gridded Section 2 (Creature Gallery):** 3-column responsive prehistoric species gallery grid.
 
 4. **Responsiveness:**
-   - Viewport meta tag included.
-   - Media queries at `860px` and `600px` adjusting columns and layouts for desktop, tablet, and mobile screens.
+   - Viewport meta tag configured.
+   - Media queries at `860px` and `600px` adjusting columns and layouts smoothly across desktop, tablet, and mobile screens.
 
 5. **JavaScript Interactives:**
-   - **Celestial Gravity & Weight Calculator:** Dynamically computes weight and jump ratio on 5 celestial bodies.
-   - **Photo Gallery Category Filter:** Live DOM filter between All Photos, Crew & Ship, and Expeditions.
-   - **Deep Space Sector Scanner:** Intercepts radio frequencies and cycles live telemetry reports.
-   - **Dark / Light Mode Toggle:** Smooth theme switcher with dynamic button text.
+   - **Species Diet & Category Filter:** Live DOM filter between All Creatures, Carnivores, Herbivores, and Pterosaurs.
+   - **Biometric Scale Calculator:** Computes comparative weight ratios, human equivalents, and daily food requirements against Mesozoic dinosaurs.
+   - **Acoustic Roar & Vocalization Simulator:** Selects and renders real acoustic telemetry, frequencies (Hz), intensities (dB), and behavioral roles.
+   - **Volcanic Night Theme Toggle:** Switches between Daylight Forest and Volcanic Night modes with dynamic button text.

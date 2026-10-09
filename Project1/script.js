@@ -1,21 +1,24 @@
 const themeBtn = document.getElementById('theme-btn');
 const filterBtns = document.querySelectorAll('.filter-btn');
-const galleryCards = document.querySelectorAll('.gallery-card');
-const calcBtn = document.getElementById('calc-btn');
-const weightInput = document.getElementById('weight-input');
-const destinationSelect = document.getElementById('destination-select');
-const calcResult = document.getElementById('calc-result');
-const scanBtn = document.getElementById('scan-btn');
-const scannerChannel = document.getElementById('scanner-channel');
-const scannerOutput = document.getElementById('scanner-output');
+const dinoCards = document.querySelectorAll('.dino-card');
+const calcScaleBtn = document.getElementById('calc-scale-btn');
+const userWeightInput = document.getElementById('user-weight');
+const dinoSelect = document.getElementById('dino-select');
+const scaleResult = document.getElementById('scale-result');
+const soundSelectBtns = document.querySelectorAll('.sound-select-btn');
+const soundTitle = document.getElementById('sound-title');
+const soundDesc = document.getElementById('sound-desc');
+const soundFreq = document.getElementById('sound-freq');
+const soundDb = document.getElementById('sound-db');
+const soundRole = document.getElementById('sound-role');
 
 themeBtn.addEventListener('click', function () {
     document.body.classList.toggle('dark-theme');
 
     if (document.body.classList.contains('dark-theme')) {
-        themeBtn.textContent = 'Switch to Light Mode';
+        themeBtn.textContent = 'Switch to Daylight Mode';
     } else {
-        themeBtn.textContent = 'Switch to Dark Mode';
+        themeBtn.textContent = 'Switch to Volcanic Night';
     }
 });
 
@@ -28,7 +31,7 @@ filterBtns.forEach(function (button) {
 
         const filterValue = button.getAttribute('data-filter');
 
-        galleryCards.forEach(function (card) {
+        dinoCards.forEach(function (card) {
             const cardCategory = card.getAttribute('data-category');
 
             if (filterValue === 'all' || cardCategory === filterValue) {
@@ -40,54 +43,81 @@ filterBtns.forEach(function (button) {
     });
 });
 
-calcBtn.addEventListener('click', function () {
-    const earthWeight = parseFloat(weightInput.value);
-    const gravityFactor = parseFloat(destinationSelect.value);
-    const destinationName = destinationSelect.options[destinationSelect.selectedIndex].text;
+calcScaleBtn.addEventListener('click', function () {
+    const userWeight = parseFloat(userWeightInput.value);
+    const dinoWeight = parseFloat(dinoSelect.value);
+    const dinoName = dinoSelect.options[dinoSelect.selectedIndex].text.split('(')[0].trim();
 
-    if (isNaN(earthWeight) || earthWeight <= 0) {
-        calcResult.innerHTML = '<p class="calc-result-text" style="color: #dc2626;">Please enter a valid weight in pounds.</p>';
+    if (isNaN(userWeight) || userWeight <= 0) {
+        scaleResult.innerHTML = '<p class="calc-result-title" style="color: #dc2626;">Please enter a valid weight in pounds.</p>';
         return;
     }
 
-    const targetWeight = (earthWeight * gravityFactor).toFixed(1);
-    const jumpMultiplier = (1 / gravityFactor).toFixed(1);
+    if (dinoWeight < userWeight) {
+        const ratio = (userWeight / dinoWeight).toFixed(1);
+        scaleResult.innerHTML = `
+            <p class="calc-result-title">You are about ${ratio}x heavier than a ${dinoName}!</p>
+            <p class="calc-result-detail">Velociraptors were turkey-sized agile hunters weighing around 35 lbs, relying on pack coordination and speed rather than sheer mass.</p>
+        `;
+    } else {
+        const ratio = (dinoWeight / userWeight).toFixed(1);
+        const humansNeeded = Math.round(dinoWeight / userWeight);
+        const dailyMeatOrPlants = Math.round(dinoWeight * 0.05);
 
-    calcResult.innerHTML = `
-        <p class="calc-result-text">On ${destinationName}, you would weigh approximately ${targetWeight} lbs.</p>
-        <p class="calc-result-note">Surface gravity factor: ${(gravityFactor * 100).toFixed(0)}% of Earth standard. You could jump about ${jumpMultiplier}x higher here.</p>
-    `;
+        scaleResult.innerHTML = `
+            <p class="calc-result-title">A ${dinoName} was approximately ${ratio}x your body weight!</p>
+            <p class="calc-result-detail">It would take roughly ${humansNeeded} people of your weight to balance the scales against this creature. Estimated daily sustenance required: ~${dailyMeatOrPlants.toLocaleString()} lbs of food per day.</p>
+        `;
+    }
 });
 
-const scanTransmissions = [
-    {
-        channel: "Sector Alpha-4 (1420.4 MHz)",
-        message: "Scout probe telemetry nominal. Detected clear atmospheric windows across the Martian red canyon ridge."
+const acousticProfiles = {
+    trex: {
+        title: "Acoustic Profile: Tyrannosaurus Rex Infrasound",
+        desc: "Low-frequency infrasound vibration below 20 Hz. This deep vibrational rumble could travel for miles through dense prehistoric forest floors without alerting distant prey.",
+        freq: "Frequency: 12 - 35 Hz",
+        db: "Intensity: ~115 dB (Sub-audible rumble)",
+        role: "Purpose: Territory Marking & Infrasonic Communication"
     },
-    {
-        channel: "Sector Cryo-9 (2104.8 MHz)",
-        message: "Planet Frost sensors report subterranean heat plumes beneath the emerald ice caverns. Mineral harvest ready."
+    brachio: {
+        title: "Acoustic Profile: Brachiosaurus Resonant Call",
+        desc: "Massive cavernous chest reverberation producing deep brass-like bellowing. Sound traveled along river basins to maintain herd cohesion over vast Jurassic floodplains.",
+        freq: "Frequency: 45 - 90 Hz",
+        db: "Intensity: ~125 dB (Distant thunder tone)",
+        role: "Purpose: Herd Navigation & Long-Range Calling"
     },
-    {
-        channel: "Deep Orbital Relay (8410.2 MHz)",
-        message: "Lunar station beacon active. Cargo transport docked at Bay 3 with fresh solar battery cells for the Starlight."
+    raptor: {
+        title: "Acoustic Profile: Velociraptor Pack Hiss & Chirp",
+        desc: "High-frequency avian vocalizations, sharp predatory chirps, and warning hisses modulated through flexible tracheal syrinx chambers during coordinated canyon flanking.",
+        freq: "Frequency: 400 - 1800 Hz",
+        db: "Intensity: ~85 dB (Audible sharp click)",
+        role: "Purpose: Tactical Pack Coordination & Alarm Signals"
     },
-    {
-        channel: "Asteroid Field Asteria (5022.1 MHz)",
-        message: "Minor gravitational wave fluctuation detected. Sparky recommends recalibrating navigation shields before departure."
-    },
-    {
-        channel: "Outpost Sol-Prime (9211.0 MHz)",
-        message: "Star charts updated. Next exploration sector scheduled for uncharted moon Europa-Delta."
+    spino: {
+        title: "Acoustic Profile: Spinosaurus Semi-Aquatic Growl",
+        desc: "Throaty aquatic bellows and surface water slapping vibrations. Used along murky river deltas to disorient shoals of prehistoric fish and assert dominance along river banks.",
+        freq: "Frequency: 60 - 150 Hz",
+        db: "Intensity: ~110 dB (Throaty gutter growl)",
+        role: "Purpose: Waterway Dominance & Ambush Signaling"
     }
-];
+};
 
-let currentScanIndex = 0;
+soundSelectBtns.forEach(function (button) {
+    button.addEventListener('click', function () {
+        soundSelectBtns.forEach(function (btn) {
+            btn.classList.remove('active');
+        });
+        button.classList.add('active');
 
-scanBtn.addEventListener('click', function () {
-    const data = scanTransmissions[currentScanIndex];
-    scannerChannel.textContent = `Channel: ${data.channel}`;
-    scannerOutput.textContent = data.message;
+        const dinoKey = button.getAttribute('data-dino');
+        const profile = acousticProfiles[dinoKey];
 
-    currentScanIndex = (currentScanIndex + 1) % scanTransmissions.length;
+        if (profile) {
+            soundTitle.textContent = profile.title;
+            soundDesc.textContent = profile.desc;
+            soundFreq.textContent = profile.freq;
+            soundDb.textContent = profile.db;
+            soundRole.textContent = profile.role;
+        }
+    });
 });
