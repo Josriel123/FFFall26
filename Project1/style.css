@@ -27,7 +27,12 @@ header {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-body.dark-mode header {
+body.dark-mode header,
+body.dark-mode .info-card,
+body.dark-mode .era-card,
+body.dark-mode .dino-card,
+body.dark-mode .calculator-box,
+body.dark-mode .sound-box {
     background-color: #242b25;
 }
 
@@ -62,6 +67,27 @@ p {
     margin-bottom: 12px;
 }
 
+button,
+input,
+select {
+    min-height: 44px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid #1b5e20;
+    outline-offset: 3px;
+}
+
+body.dark-mode a:focus-visible,
+body.dark-mode button:focus-visible,
+body.dark-mode input:focus-visible,
+body.dark-mode select:focus-visible {
+    outline-color: #81c784;
+}
+
 .tagline {
     color: #666666;
     margin-bottom: 16px;
@@ -71,7 +97,6 @@ body.dark-mode .tagline {
     color: #aaaaaa;
 }
 
-/* Navigation */
 .main-nav ul {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -128,22 +153,23 @@ body.dark-mode .action-btn {
     color: #1a1e1b;
 }
 
-.info-card {
+.info-card,
+.calculator-box,
+.sound-box {
     background-color: #ffffff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
-body.dark-mode .info-card {
-    background-color: #242b25;
-}
-
-/* Eras Section */
-.eras-grid {
+.eras-grid,
+.gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 18px;
+}
+
+.eras-grid {
     margin-top: 16px;
 }
 
@@ -152,10 +178,6 @@ body.dark-mode .info-card {
     padding: 18px;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-}
-
-body.dark-mode .era-card {
-    background-color: #242b25;
 }
 
 .badge {
@@ -167,9 +189,9 @@ body.dark-mode .era-card {
     margin-bottom: 8px;
 }
 
-.badge-orange { background-color: #ffe0b2; color: #e65100; }
-.badge-green { background-color: #c8e6c9; color: #2e7d32; }
-.badge-amber { background-color: #fff9c4; color: #f57f17; }
+.badge-orange { background-color: #ffe0b2; color: #9a3412; }
+.badge-green { background-color: #c8e6c9; color: #1b5e20; }
+.badge-amber { background-color: #fff9c4; color: #854d0e; }
 
 .climate-label {
     font-weight: 600;
@@ -181,7 +203,6 @@ body.dark-mode .climate-label {
     color: #ffcc80;
 }
 
-/* Filter Buttons */
 .filter-buttons {
     display: flex;
     gap: 8px;
@@ -198,7 +219,8 @@ body.dark-mode .climate-label {
     cursor: pointer;
 }
 
-.filter-btn.active {
+.filter-btn.active,
+.sound-btn.active {
     background-color: #2e7d32;
     color: #ffffff;
     border-color: #2e7d32;
@@ -210,16 +232,10 @@ body.dark-mode .filter-btn {
     border-color: #444444;
 }
 
-body.dark-mode .filter-btn.active {
+body.dark-mode .filter-btn.active,
+body.dark-mode .sound-btn.active {
     background-color: #66bb6a;
     color: #1a1e1b;
-}
-
-/* Creature Gallery */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
 }
 
 .dino-card {
@@ -228,10 +244,6 @@ body.dark-mode .filter-btn.active {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-}
-
-body.dark-mode .dino-card {
-    background-color: #242b25;
 }
 
 .dino-card img {
@@ -259,24 +271,12 @@ figcaption strong {
 }
 
 .carnivore-text { color: #d32f2f; }
-.herbivore-text { color: #388e3c; }
-.flying-text { color: #0288d1; }
+.herbivore-text { color: #2e7d32; }
+.flying-text { color: #0369a1; }
 
-body.dark-mode .carnivore-text { color: #ef5350; }
+body.dark-mode .carnivore-text { color: #ff8a80; }
 body.dark-mode .herbivore-text { color: #81c784; }
 body.dark-mode .flying-text { color: #4fc3f7; }
-
-/* Calculator Section */
-.calculator-box {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-}
-
-body.dark-mode .calculator-box {
-    background-color: #242b25;
-}
 
 .form-row {
     margin-bottom: 14px;
@@ -319,16 +319,12 @@ body.dark-mode .result-message {
     color: #81c784;
 }
 
-/* Sound Section */
-.sound-box {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+.result-message.error {
+    color: #b71c1c;
 }
 
-body.dark-mode .sound-box {
-    background-color: #242b25;
+body.dark-mode .result-message.error {
+    color: #ff8a80;
 }
 
 .sound-buttons {
@@ -347,21 +343,10 @@ body.dark-mode .sound-box {
     cursor: pointer;
 }
 
-.sound-btn.active {
-    background-color: #2e7d32;
-    color: #ffffff;
-    border-color: #2e7d32;
-}
-
 body.dark-mode .sound-btn {
     background-color: #1a1e1b;
     color: #e5e7eb;
     border-color: #444444;
-}
-
-body.dark-mode .sound-btn.active {
-    background-color: #66bb6a;
-    color: #1a1e1b;
 }
 
 .sound-info-card {
@@ -377,14 +362,13 @@ body.dark-mode .sound-info-card {
 footer {
     text-align: center;
     padding: 24px 0 10px 0;
-    color: #777777;
+    color: #666666;
     margin-top: 36px;
     border-top: 1px solid #e0e0e0;
 }
 
 .ai-note {
     font-size: 0.85rem;
-    color: #888888;
 }
 
 body.dark-mode footer {
@@ -392,16 +376,12 @@ body.dark-mode footer {
     color: #aaaaaa;
 }
 
-/* Responsive Media Queries */
 @media (max-width: 768px) {
     .main-nav ul {
         grid-template-columns: 1fr 1fr;
     }
 
-    .eras-grid {
-        grid-template-columns: 1fr;
-    }
-
+    .eras-grid,
     .gallery-grid {
         grid-template-columns: 1fr;
     }

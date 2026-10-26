@@ -15,13 +15,13 @@ const discoveries = [
 let discoveryIndex = 0;
 
 modeBtn.addEventListener('click', function () {
-    document.body.classList.toggle('dark-theme');
+    const darkMode = document.body.classList.toggle('dark-theme');
 
-    if (document.body.classList.contains('dark-theme')) {
-        modeBtn.innerHTML = 'Switch to Light Mode';
+    if (darkMode) {
+        modeBtn.textContent = 'Switch to Light Mode';
         modeBtn.style.backgroundColor = '#475569';
     } else {
-        modeBtn.innerHTML = 'Switch to Dark Mode';
+        modeBtn.textContent = 'Switch to Dark Mode';
         modeBtn.style.backgroundColor = '#2b6cb0';
     }
 });
@@ -29,18 +29,22 @@ modeBtn.addEventListener('click', function () {
 toggleGearBtn.addEventListener('click', function () {
     if (gearList.style.display === 'none') {
         gearList.style.display = 'block';
-        toggleGearBtn.innerHTML = 'Hide Gear Checklist';
+        toggleGearBtn.textContent = 'Hide Gear Checklist';
         toggleGearBtn.style.backgroundColor = '#2b6cb0';
     } else {
         gearList.style.display = 'none';
-        toggleGearBtn.innerHTML = 'Show Gear Checklist';
-        toggleGearBtn.style.backgroundColor = '#d97706';
+        toggleGearBtn.textContent = 'Show Gear Checklist';
+        toggleGearBtn.style.backgroundColor = '#92400e';
     }
 });
 
 scanBtn.addEventListener('click', function () {
-    scanStatus.innerHTML = discoveries[discoveryIndex];
-    discoveryIndex = (discoveryIndex + 1) % discoveries.length;
+    scanStatus.textContent = discoveries[discoveryIndex];
+    discoveryIndex = discoveryIndex + 1;
+
+    if (discoveryIndex === discoveries.length) {
+        discoveryIndex = 0;
+    }
 
     scanStatus.style.color = '#0369a1';
     scanStatus.style.fontWeight = '600';

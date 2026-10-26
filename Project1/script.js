@@ -10,9 +10,9 @@ const soundName = document.getElementById('sound-name');
 const soundDesc = document.getElementById('sound-desc');
 
 themeBtn.addEventListener('click', function () {
-    document.body.classList.toggle('dark-mode');
+    const darkMode = document.body.classList.toggle('dark-mode');
 
-    if (document.body.classList.contains('dark-mode')) {
+    if (darkMode) {
         themeBtn.textContent = 'Switch to Light Mode';
     } else {
         themeBtn.textContent = 'Switch to Dark Mode';
@@ -47,18 +47,18 @@ calcBtn.addEventListener('click', function () {
 
     if (isNaN(userWeight) || userWeight <= 0) {
         calcResult.textContent = 'Please enter a valid weight in pounds.';
-        calcResult.style.color = '#d32f2f';
+        calcResult.classList.add('error');
         return;
     }
 
-    calcResult.style.color = '#2e7d32';
+    calcResult.classList.remove('error');
 
     if (dinoWeight < userWeight) {
         const timesLighter = (userWeight / dinoWeight).toFixed(1);
-        calcResult.textContent = `You are about ${timesLighter} times heavier than a Velociraptor!`;
+        calcResult.textContent = `You are about ${timesLighter} times heavier than a ${selectedOption}!`;
     } else {
         const howManyPeople = Math.round(dinoWeight / userWeight);
-        calcResult.textContent = `It would take about ${howManyPeople} people of your weight to equal one ${selectedOption}!`;
+        calcResult.textContent = `It would take about ${howManyPeople} of you to equal one ${selectedOption}!`;
     }
 });
 
