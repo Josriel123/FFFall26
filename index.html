@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leo the Space Explorer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,9 +11,13 @@
     <div class="container">
 
         <header>
-            <h1>Leo the Space Explorer</h1>
-            <p>A personal wiki and profile of a deep-space scout and his companion.</p>
-            <button id="mode-btn" class="action-btn">Switch to Dark Mode</button>
+            <div class="heading-row">
+                <div>
+                    <h1>Leo the Space Explorer</h1>
+                    <p>A personal wiki and profile of a deep-space scout and his companion.</p>
+                </div>
+                <button id="mode-btn" class="action-btn">Switch to Dark Mode</button>
+            </div>
 
             <!-- Navigation -->
             <nav>
@@ -34,99 +35,97 @@
 
         <main>
 
-            <section id="about">
-                <h2>About the Explorer</h2>
-                <p>
-                    <strong>Leo</strong> grew up on a small moon colony. Ever since he was a kid, he loved looking at the stars and fixing old machines. When he turned twenty, he saved up enough money to buy an old yellow spaceship named the <em>Starlight</em>.
-                </p>
+            <section id="about" class="about-layout">
+                <div class="story-copy">
+                    <h2>About the Explorer</h2>
+                    <p>
+                        <strong>Leo</strong> grew up on a small moon colony. Ever since he was a kid, he loved looking at the stars and fixing old machines. When he turned twenty, he saved up enough money to buy an old yellow spaceship named the <em>Starlight</em>.
+                    </p>
 
-                <p>
-                    Today, Leo travels to new planets to map unknown lands and collect rare space rocks. He is never lonely because his best friend is <strong>Sparky</strong>, a small mechanical dog he built from scrap parts. Together, they help stranded astronauts and discover quiet, beautiful places across the galaxy.
-                </p>
+                    <p>
+                        Today, Leo travels to new planets to map unknown lands and collect rare space rocks. He is never lonely because his best friend is <strong>Sparky</strong>, a small mechanical dog he built from scrap parts. Together, they help stranded astronauts and discover quiet, beautiful places across the galaxy.
+                    </p>
 
-                <h3>The Ship: <em>Starlight</em></h3>
-                <p>
-                    The <em>Starlight</em> is a small, solar-powered scout ship. It has strong landing legs, an automated airlock, and engines built to fly through asteroid fields safely.
-                </p>
+                    <h3>The Ship: <em>Starlight</em></h3>
+                    <p>
+                        The <em>Starlight</em> is a small, solar-powered scout ship. It has strong landing legs, an automated airlock, and engines built to fly through asteroid fields safely.
+                    </p>
+                </div>
 
                 <div class="scanner-box">
                     <h3>Mission Scanner</h3>
-                    <p id="scan-status">Scanner on standby. Click below to scan deep space.</p>
+                    <p id="scan-status" aria-live="polite">Ready to scan the next sector.</p>
                     <button id="scan-btn" class="action-btn">Scan Next Sector</button>
                 </div>
             </section>
 
-            <hr>
+            <section id="gear" class="gear-layout">
+                <div>
+                    <h2>Essential Gear</h2>
+                    <p>
+                        Leo never journeys alone. Sparky can scan rocks, search for underground caves, and light up dark areas with his glowing blue eyes.
+                    </p>
+                </div>
 
-            <section id="gear">
-                <h2>Essential Gear</h2>
-                <p>
-                    Leo never journeys alone. Sparky can scan rocks, search for underground caves, and light up dark areas with his glowing blue eyes.
-                </p>
-
-                <h3>Gear Checklist</h3>
-                <button id="toggle-gear-btn" class="action-btn">Hide Gear Checklist</button>
-                <ul id="gear-list">
-                    <li><strong>Solar Spacesuit:</strong> A warm, lightweight white suit powered by sunlight.</li>
-                    <li><strong>Sparky the Robot Dog:</strong> A loyal companion that can scan rocks and shine a light in dark caves.</li>
-                    <li><strong>Handheld Scanner:</strong> A pocket device used to find water and safe paths.</li>
-                    <li><strong>Star Map Tablet:</strong> A digital map that shows all the planets they have visited.</li>
-                </ul>
+                <div class="gear-checklist">
+                    <h3>Gear Checklist</h3>
+                    <button id="toggle-gear-btn" class="action-btn">Hide Gear Checklist</button>
+                    <ul id="gear-list">
+                        <li><strong>Solar Spacesuit:</strong> A warm, lightweight white suit powered by sunlight.</li>
+                        <li><strong>Sparky the Robot Dog:</strong> A loyal companion that can scan rocks and shine a light in dark caves.</li>
+                        <li><strong>Handheld Scanner:</strong> A pocket device used to find water and safe paths.</li>
+                        <li><strong>Star Map Tablet:</strong> A digital map that shows all the planets they have visited.</li>
+                    </ul>
+                </div>
             </section>
-
-            <hr>
 
             <section id="adventures">
                 <h2>Space Adventures</h2>
                 <p>Here are four of Leo and Sparky's biggest missions:</p>
 
-                <ol>
+                <ol class="adventure-log">
                     <li>
-                        <strong>The Blue Moon Rescue</strong> &mdash; 
-                        <time datetime="2025-04-14" class="badge">April 14, 2025</time>: 
-                        Saved a lost cargo ship stuck in an asteroid belt.
+                        <time datetime="2025-04-14">April 14, 2025</time>
+                        <strong>The Blue Moon Rescue</strong>
+                        <p>Saved a lost cargo ship stuck in an asteroid belt.</p>
                     </li>
                     <li>
-                        <strong>Finding the Crystal Cave</strong> &mdash; 
-                        <time datetime="2025-09-22" class="badge">September 22, 2025</time>: 
-                        Discovered glowing <mark>rare green crystals</mark> under the ice on <em>Planet Frost</em>.
+                        <time datetime="2025-09-22">September 22, 2025</time>
+                        <strong>Finding the Crystal Cave</strong>
+                        <p>Discovered glowing <mark>rare green crystals</mark> under the ice on <em>Planet Frost</em>.</p>
                     </li>
                     <li>
-                        <strong>The Sandstorm Escape</strong> &mdash; 
-                        <time datetime="2026-02-18" class="badge">February 18, 2026</time>: 
-                        Escaped a massive red dust storm on Mars with help from Sparky's sensors.
+                        <time datetime="2026-02-18">February 18, 2026</time>
+                        <strong>The Sandstorm Escape</strong>
+                        <p>Escaped a massive red dust storm on Mars with help from Sparky's sensors.</p>
                     </li>
                     <li>
-                        <strong>The Deep Crater Discovery</strong> &mdash; 
-                        <time datetime="2026-06-30" class="badge">June 30, 2026</time>: 
-                        Found ancient water pools hidden deep inside a silent crater.
+                        <time datetime="2026-06-30">June 30, 2026</time>
+                        <strong>The Deep Crater Discovery</strong>
+                        <p>Found ancient water pools hidden deep inside a silent crater.</p>
                     </li>
                 </ol>
             </section>
 
-            <hr>
-
             <section id="gallery">
                 <h2>Image Gallery</h2>
                 <div class="gallery-grid">
-                    <figure class="card">
+                    <figure>
                         <img src="images/leo.jpg" alt="Leo smiling in his spacesuit on an alien planet">
                         <figcaption>Figure 1: <strong>Leo</strong> ready for his next mission.</figcaption>
                     </figure>
 
-                    <figure class="card">
+                    <figure>
                         <img src="images/sparky.jpg" alt="Sparky the robot dog on red ground">
                         <figcaption>Figure 2: <strong>Sparky</strong> scouting a red canyon.</figcaption>
                     </figure>
 
-                    <figure class="card">
+                    <figure>
                         <img src="images/starlight.jpg" alt="The yellow spaceship Starlight on a landing platform">
                         <figcaption>Figure 3: The <em>Starlight</em> parked on a launch pad.</figcaption>
                     </figure>
                 </div>
             </section>
-
-            <hr>
 
             <section id="links">
                 <h2>Space Resources</h2>
@@ -138,8 +137,6 @@
             </section>
 
         </main>
-
-        <hr>
 
         <footer>
             <p><small>&copy; 2026 Joel Bueno. Front End Fundamentals.</small></p>

@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-26T16:44:04Z",
+  "title": "Design System: Leo the Space Explorer",
+  "extensions": {
+    "shadows": [],
+    "motion": [
+      {
+        "name": "button-colors",
+        "value": "background-color 0.2s ease, color 0.2s ease",
+        "purpose": "Button hover feedback."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "stack-story",
+        "value": "860px"
+      },
+      {
+        "name": "single-column",
+        "value": "600px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Outlined Button",
+      "kind": "button",
+      "refersTo": "button",
+      "description": "Theme and checklist controls on the root page.",
+      "html": "<button class=\"ds-button\">Hide Gear Checklist</button>",
+      "css": ".ds-button{min-height:44px;padding:10px 16px;border:1px solid #253946;border-radius:3px;background-color:transparent;color:#253946;font-family:Verdana,sans-serif;font-size:0.85rem;line-height:1.4;cursor:pointer;transition:background-color 0.2s ease,color 0.2s ease}.ds-button:hover{background-color:#253946;color:#f8f9f5}.ds-button:focus-visible{outline:3px solid #884515;outline-offset:4px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Mission journal",
+    "overview": "Root story page only. Plain reading structure with serif headings, flat images, and a compact navy scanner. Project1 is outside this system.",
+    "keyCharacteristics": [
+      "Georgia headings and Verdana body text",
+      "Paper and navy with amber scanner actions",
+      "Responsive columns without repeat()",
+      "Three existing images; no new assets"
+    ],
+    "rules": [],
+    "dos": [
+      "Keep the story, gallery, and existing interactions.",
+      "Keep readable colors, visible focus, and 44px controls."
+    ],
+    "donts": [
+      "Do not apply this system to Project1.",
+      "Do not add repeated rounded cards, decorative badges, or shadows."
+    ]
+  }
+}

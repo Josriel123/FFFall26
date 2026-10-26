@@ -99,7 +99,7 @@ body.dark-mode .tagline {
 
 .main-nav ul {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 10px;
     list-style: none;
     padding: 0;
@@ -165,7 +165,7 @@ body.dark-mode .action-btn {
 .eras-grid,
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 18px;
 }
 

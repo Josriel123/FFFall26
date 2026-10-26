@@ -19,10 +19,8 @@ modeBtn.addEventListener('click', function () {
 
     if (darkMode) {
         modeBtn.textContent = 'Switch to Light Mode';
-        modeBtn.style.backgroundColor = '#475569';
     } else {
         modeBtn.textContent = 'Switch to Dark Mode';
-        modeBtn.style.backgroundColor = '#2b6cb0';
     }
 });
 
@@ -30,11 +28,9 @@ toggleGearBtn.addEventListener('click', function () {
     if (gearList.style.display === 'none') {
         gearList.style.display = 'block';
         toggleGearBtn.textContent = 'Hide Gear Checklist';
-        toggleGearBtn.style.backgroundColor = '#2b6cb0';
     } else {
         gearList.style.display = 'none';
         toggleGearBtn.textContent = 'Show Gear Checklist';
-        toggleGearBtn.style.backgroundColor = '#92400e';
     }
 });
 
@@ -46,7 +42,5 @@ scanBtn.addEventListener('click', function () {
         discoveryIndex = 0;
     }
 
-    scanStatus.style.color = '#0369a1';
-    scanStatus.style.fontWeight = '600';
     scanStatus.classList.add('scan-success');
 });
