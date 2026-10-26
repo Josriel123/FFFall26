@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A guide to prehistoric dinosaurs, the three Mesozoic eras, and interactive scale calculators.">
+    <meta name="description" content="A prehistoric field guide with dinosaur illustrations, Mesozoic time periods, and interactive weight comparisons.">
     <title>The Dinosaur Guide | Prehistoric Creatures</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,27 +12,35 @@
     <div class="container">
 
         <header>
-            <h1>The Dinosaur Guide</h1>
-            <p class="tagline">Explore the giants of the prehistoric world</p>
-            <button id="theme-btn" class="action-btn">Switch to Dark Mode</button>
+            <div class="heading-row">
+                <div>
+                    <h1>The Dinosaur Guide</h1>
+                    <p class="tagline">Explore the giants of the prehistoric world</p>
+                </div>
+                <button id="theme-btn" class="action-btn" type="button">Switch to Dark Mode</button>
+            </div>
 
             <!-- Navigation -->
             <nav class="main-nav">
                 <ul>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#eras">The Three Eras</a></li>
+                    <li><a href="#eras">Time Periods</a></li>
                     <li><a href="#gallery">Creature Gallery</a></li>
                     <li><a href="#calculator">Size Calculator</a></li>
-                    <li><a href="#sounds">Roar Sounds</a></li>
+                    <li><a href="#sounds">Roar Guide</a></li>
                 </ul>
             </nav>
         </header>
 
         <main>
 
-            <section id="about">
-                <h2>Welcome to the Prehistoric Era</h2>
-                <div class="info-card">
+            <section id="about" class="intro-grid">
+                <figure class="intro-figure">
+                    <img src="images/trex.jpg" alt="A Tyrannosaurus Rex among prehistoric ferns">
+                    <figcaption>Tyrannosaurus Rex, one of the species in the creature gallery.</figcaption>
+                </figure>
+                <div class="intro-copy">
+                    <h2>Welcome to the Prehistoric Era</h2>
                     <p>
                         Dinosaurs ruled the Earth for over 160 million years during the Mesozoic Era. They lived in all kinds of environments, from warm prehistoric swamps and giant fern forests to dry sandy deserts. Some were small and fast, while others were as tall as four-story buildings.
                     </p>
@@ -46,12 +51,12 @@
             </section>
 
             <section id="eras">
-                <h2>The Three Dinosaur Eras</h2>
+                <h2>Three Mesozoic Periods</h2>
                 <p>The Age of Dinosaurs is divided into three major time periods:</p>
 
                 <div class="eras-grid">
-                    <article class="era-card">
-                        <span class="badge badge-orange">252 - 201 MYA</span>
+                    <article class="period-entry">
+                        <span class="period-date">252 - 201 MYA</span>
                         <h3>Triassic Period</h3>
                         <p class="climate-label">Climate: Hot and dry deserts</p>
                         <p>
@@ -59,8 +64,8 @@
                         </p>
                     </article>
 
-                    <article class="era-card">
-                        <span class="badge badge-green">201 - 145 MYA</span>
+                    <article class="period-entry">
+                        <span class="period-date">201 - 145 MYA</span>
                         <h3>Jurassic Period</h3>
                         <p class="climate-label">Climate: Warm and rainy</p>
                         <p>
@@ -68,8 +73,8 @@
                         </p>
                     </article>
 
-                    <article class="era-card">
-                        <span class="badge badge-amber">145 - 66 MYA</span>
+                    <article class="period-entry">
+                        <span class="period-date">145 - 66 MYA</span>
                         <h3>Cretaceous Period</h3>
                         <p class="climate-label">Climate: Mild with flowering plants</p>
                         <p>
@@ -81,13 +86,13 @@
 
             <section id="gallery">
                 <h2>Dinosaur Gallery</h2>
-                <p>Click the buttons below to filter dinosaurs by diet:</p>
+                <p>Choose a group to filter the creatures:</p>
 
                 <div class="filter-buttons">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="carnivore">Carnivores</button>
-                    <button class="filter-btn" data-filter="herbivore">Herbivores</button>
-                    <button class="filter-btn" data-filter="flying">Flying</button>
+                    <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All</button>
+                    <button class="filter-btn" type="button" data-filter="carnivore" aria-pressed="false">Carnivores</button>
+                    <button class="filter-btn" type="button" data-filter="herbivore" aria-pressed="false">Herbivores</button>
+                    <button class="filter-btn" type="button" data-filter="flying" aria-pressed="false">Flying</button>
                 </div>
 
                 <div class="gallery-grid">
@@ -95,7 +100,7 @@
                         <img src="images/trex.jpg" alt="A green and brown Tyrannosaurus Rex roaring in a prehistoric fern jungle">
                         <figcaption>
                             <strong>Tyrannosaurus Rex</strong>
-                            <span class="dino-type carnivore-text">Carnivore &bull; Cretaceous</span>
+                            <span class="dino-type">Carnivore &bull; Cretaceous</span>
                             <p>One of the largest meat-eaters to ever live, with teeth over 8 inches long.</p>
                         </figcaption>
                     </figure>
@@ -104,7 +109,7 @@
                         <img src="images/triceratops.jpg" alt="A Triceratops eating plants near a river in a valley">
                         <figcaption>
                             <strong>Triceratops</strong>
-                            <span class="dino-type herbivore-text">Herbivore &bull; Cretaceous</span>
+                            <span class="dino-type">Herbivore &bull; Cretaceous</span>
                             <p>Had three large horns and a thick neck shield to protect itself against predators.</p>
                         </figcaption>
                     </figure>
@@ -113,7 +118,7 @@
                         <img src="images/velociraptor.jpg" alt="A pack of feathered Velociraptors running on a rocky canyon edge">
                         <figcaption>
                             <strong>Velociraptor</strong>
-                            <span class="dino-type carnivore-text">Carnivore &bull; Cretaceous</span>
+                            <span class="dino-type">Carnivore &bull; Cretaceous</span>
                             <p>Small, fast, and covered in feathers with sharp sickle claws on their back feet.</p>
                         </figcaption>
                     </figure>
@@ -122,7 +127,7 @@
                         <img src="images/brachiosaurus.jpg" alt="A huge long neck Brachiosaurus eating leaves from the top of tall trees">
                         <figcaption>
                             <strong>Brachiosaurus</strong>
-                            <span class="dino-type herbivore-text">Herbivore &bull; Jurassic</span>
+                            <span class="dino-type">Herbivore &bull; Jurassic</span>
                             <p>A massive dinosaur with a long neck that let it eat leaves from the tops of trees.</p>
                         </figcaption>
                     </figure>
@@ -131,7 +136,7 @@
                         <img src="images/spinosaurus.jpg" alt="A Spinosaurus with a large sail on its back standing near water">
                         <figcaption>
                             <strong>Spinosaurus</strong>
-                            <span class="dino-type carnivore-text">Carnivore &bull; Cretaceous</span>
+                            <span class="dino-type">Carnivore &bull; Cretaceous</span>
                             <p>A giant swimmer with a big sail on its back that hunted large fish in rivers.</p>
                         </figcaption>
                     </figure>
@@ -140,62 +145,64 @@
                         <img src="images/pterodactyl.jpg" alt="A Pterodactyl flying over ocean cliffs near volcanoes">
                         <figcaption>
                             <strong>Pterodactyl</strong>
-                            <span class="dino-type flying-text">Flying Reptile &bull; Cretaceous</span>
+                            <span class="dino-type">Flying Reptile &bull; Cretaceous</span>
                             <p>A winged prehistoric reptile that glided over ocean cliffs searching for fish.</p>
                         </figcaption>
                     </figure>
                 </div>
             </section>
 
-            <section id="calculator">
-                <h2>Dinosaur Weight Comparison</h2>
-                <p>See how many of you it would take to balance the scale with a dinosaur:</p>
+            <div class="tools-grid">
+                <section id="calculator">
+                    <h2>Dinosaur Weight Comparison</h2>
+                    <p>See how many of you it would take to balance the scale with a dinosaur:</p>
 
-                <div class="calculator-box">
-                    <div class="form-row">
-                        <label for="user-weight">Your Weight (lbs):</label>
-                        <input type="number" id="user-weight" placeholder="e.g. 150">
+                    <div class="calculator-box">
+                        <div class="form-row">
+                            <label for="user-weight">Your Weight (lbs):</label>
+                            <input type="number" id="user-weight" placeholder="e.g. 150" aria-describedby="calc-result">
+                        </div>
+
+                        <div class="form-row">
+                            <label for="dino-select">Choose a Dinosaur:</label>
+                            <select id="dino-select">
+                                <option value="17000">T-Rex (17,000 lbs)</option>
+                                <option value="60000">Brachiosaurus (60,000 lbs)</option>
+                                <option value="13000">Triceratops (13,000 lbs)</option>
+                                <option value="15000">Spinosaurus (15,000 lbs)</option>
+                                <option value="35">Velociraptor (35 lbs)</option>
+                            </select>
+                        </div>
+
+                        <button id="calc-btn" class="action-btn" type="button">Compare Weight</button>
+                        <div id="calc-result" class="result-message" aria-live="polite">Enter your weight above and click Compare Weight.</div>
                     </div>
+                </section>
 
-                    <div class="form-row">
-                        <label for="dino-select">Choose a Dinosaur:</label>
-                        <select id="dino-select">
-                            <option value="17000">T-Rex (17,000 lbs)</option>
-                            <option value="60000">Brachiosaurus (60,000 lbs)</option>
-                            <option value="13000">Triceratops (13,000 lbs)</option>
-                            <option value="15000">Spinosaurus (15,000 lbs)</option>
-                            <option value="35">Velociraptor (35 lbs)</option>
-                        </select>
+                <section id="sounds">
+                    <h2>Dinosaur Roar Guide</h2>
+                    <p>Select a dinosaur to read its roar description:</p>
+
+                    <div class="sound-box">
+                        <div class="sound-buttons">
+                            <button class="sound-btn active" type="button" data-sound="trex" aria-pressed="true">T-Rex</button>
+                            <button class="sound-btn" type="button" data-sound="brachio" aria-pressed="false">Brachiosaurus</button>
+                            <button class="sound-btn" type="button" data-sound="raptor" aria-pressed="false">Velociraptor</button>
+                            <button class="sound-btn" type="button" data-sound="spino" aria-pressed="false">Spinosaurus</button>
+                        </div>
+
+                        <div class="sound-info-card" aria-live="polite">
+                            <h3 id="sound-name">T-Rex Deep Rumble</h3>
+                            <p id="sound-desc">Scientists believe T-Rex made low, vibrating rumbles you could feel in the ground rather than loud lion roars.</p>
+                        </div>
                     </div>
-
-                    <button id="calc-btn" class="action-btn">Compare Weight</button>
-                    <div id="calc-result" class="result-message">Enter your weight above and click Compare Weight.</div>
-                </div>
-            </section>
-
-            <section id="sounds">
-                <h2>Dinosaur Roar Guide</h2>
-                <p>Click on a dinosaur below to see how paleontologists think it sounded:</p>
-
-                <div class="sound-box">
-                    <div class="sound-buttons">
-                        <button class="sound-btn active" data-sound="trex">T-Rex</button>
-                        <button class="sound-btn" data-sound="brachio">Brachiosaurus</button>
-                        <button class="sound-btn" data-sound="raptor">Velociraptor</button>
-                        <button class="sound-btn" data-sound="spino">Spinosaurus</button>
-                    </div>
-
-                    <div class="sound-info-card">
-                        <h3 id="sound-name">T-Rex Deep Rumble</h3>
-                        <p id="sound-desc">Scientists believe T-Rex made low, vibrating rumbles you could feel in the ground rather than loud lion roars.</p>
-                    </div>
-                </div>
-            </section>
+                </section>
+            </div>
 
         </main>
 
         <footer>
-            <p><small>&copy; 2026 Joel Bueno. Front End Fundamentals &mdash; Project 1.</small></p>
+            <p><small>&copy; 2026 Joel Bueno. Front End Fundamentals. Project 1.</small></p>
             <p class="ai-note"><small>Note: Website concept brainstorming and images were created with Google Gemini.</small></p>
         </footer>
 

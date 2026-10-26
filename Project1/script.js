@@ -23,8 +23,10 @@ filterBtns.forEach(function (button) {
     button.addEventListener('click', function () {
         filterBtns.forEach(function (btn) {
             btn.classList.remove('active');
+            btn.setAttribute('aria-pressed', 'false');
         });
         button.classList.add('active');
+        button.setAttribute('aria-pressed', 'true');
 
         const filter = button.getAttribute('data-filter');
 
@@ -85,8 +87,10 @@ soundBtns.forEach(function (btn) {
     btn.addEventListener('click', function () {
         soundBtns.forEach(function (b) {
             b.classList.remove('active');
+            b.setAttribute('aria-pressed', 'false');
         });
         btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
 
         const soundKey = btn.getAttribute('data-sound');
         const selectedSound = soundData[soundKey];

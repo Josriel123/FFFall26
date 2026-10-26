@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-26T19:57:01Z",
+  "title": "Design System: The Dinosaur Guide",
+  "extensions": {
+    "shadows": [],
+    "motion": [
+      {
+        "name": "control-colors",
+        "value": "background-color 0.2s ease, color 0.2s ease",
+        "purpose": "Button hover and selected-state feedback."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "stack-reading-columns",
+        "value": "860px"
+      },
+      {
+        "name": "single-column-gallery",
+        "value": "600px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Action",
+      "kind": "button",
+      "refersTo": "action",
+      "description": "Calculator action and selected filter treatment.",
+      "html": "<button class=\"ds-action\">Compare Weight</button>",
+      "css": ".ds-action{min-height:44px;padding:10px 16px;border:1px solid #173c2d;border-radius:2px;background-color:#173c2d;color:#fff9e9;font-family:\"Trebuchet MS\",sans-serif;font-size:1rem;cursor:pointer;transition:background-color 0.2s ease,color 0.2s ease}.ds-action:hover{border-color:#315d48;background-color:#315d48;color:#fff9e9}.ds-action:focus-visible{outline:3px solid #75531f;outline-offset:4px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Natural-history field guide",
+    "overview": "Project1 only. A forest masthead, pale reading surface, flat illustrations, plain period dates, and simple interactive tools. The root space-explorer page is separate.",
+    "keyCharacteristics": [
+      "Trebuchet MS headings and body text",
+      "Forest, ivory, and restrained ochre",
+      "Explicit grid columns with responsive stacking",
+      "Six existing illustrations; T-Rex reused in the introduction"
+    ],
+    "rules": [],
+    "dos": [
+      "Keep the existing content, attribution, and interactions.",
+      "Keep readable text, visible focus, and 44px controls.",
+      "Write grid columns explicitly without repeat()."
+    ],
+    "donts": [
+      "Do not apply this system to the root page.",
+      "Do not add repeated rounded panels, shadows, decorative badges, or new images."
+    ]
+  }
+}
