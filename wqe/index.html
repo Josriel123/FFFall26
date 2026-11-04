@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A five-question dinosaur quiz about horns, claws, and other prehistoric features.">
+    <title>Dinosaur Quiz</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.24.2/dist/css/uikit.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="page-header">
+        <div class="uk-container uk-container-small header-content">
+            <div>
+                <h1>Dinosaur Quiz</h1>
+                <p>Five questions. How well do you know these dinosaurs?</p>
+            </div>
+            <a class="guide-link" href="../Project1/index.html">The Dinosaur Guide</a>
+        </div>
+    </header>
+
+    <main class="uk-container uk-container-small">
+        <noscript>
+            <p class="feedback error">This quiz needs JavaScript. Enable it in your browser and reload the page to play.</p>
+        </noscript>
+
+        <section id="quiz-section" class="quiz-content" aria-label="Dinosaur questions" hidden>
+            <div class="quiz-status">
+                <p id="question-number">Question 1 of 5</p>
+                <p id="score">0 correct</p>
+            </div>
+            <progress id="progress" class="uk-progress" value="0" max="5" aria-label="Questions answered"></progress>
+
+            <form id="quiz-form">
+                <fieldset id="options" class="uk-fieldset">
+                    <legend id="question" tabindex="-1"></legend>
+                    <p class="answer-hint">Choose one answer, then check it.</p>
+
+                    <div class="answer-list">
+                        <label class="answer-option">
+                            <input class="uk-radio" type="radio" name="option" value="Tyrannosaurus rex">
+                            <span>Tyrannosaurus rex</span>
+                        </label>
+                        <label class="answer-option">
+                            <input class="uk-radio" type="radio" name="option" value="Triceratops">
+                            <span>Triceratops</span>
+                        </label>
+                        <label class="answer-option">
+                            <input class="uk-radio" type="radio" name="option" value="Brachiosaurus">
+                            <span>Brachiosaurus</span>
+                        </label>
+                        <label class="answer-option">
+                            <input class="uk-radio" type="radio" name="option" value="Spinosaurus">
+                            <span>Spinosaurus</span>
+                        </label>
+                        <label class="answer-option">
+                            <input class="uk-radio" type="radio" name="option" value="Velociraptor">
+                            <span>Velociraptor</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <p id="feedback" class="feedback" aria-live="polite" aria-atomic="true"></p>
+
+                <div class="quiz-actions">
+                    <button id="check-answer" class="uk-button uk-button-primary" type="submit">Check answer</button>
+                    <button id="next-question" class="uk-button uk-button-primary" type="button" hidden>Next question</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="summary-section" class="quiz-content" aria-labelledby="final-score" hidden>
+            <h2 id="final-score" tabindex="-1"></h2>
+            <p id="summary-message"></p>
+            <p>You can play again or read more in the <a href="../Project1/index.html">Dinosaur Guide</a>.</p>
+            <button id="restart" class="uk-button uk-button-primary" type="button">Play again</button>
+        </section>
+    </main>
+
+    <footer class="uk-container uk-container-small page-footer">
+        <p>Facts from the <a href="https://www.nhm.ac.uk/discover/dino-directory">Natural History Museum</a>.</p>
+    </footer>
+</body>
+</html>

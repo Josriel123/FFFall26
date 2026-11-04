@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-04T03:44:17Z",
+  "title": "Design System: Dinosaur Quiz",
+  "extensions": {
+    "colorMeta": {
+      "forest": { "role": "primary", "displayName": "Forest" },
+      "text": { "role": "neutral", "displayName": "Reading Text" },
+      "action-hover": { "role": "primary", "displayName": "Action Green" },
+      "paper": { "role": "neutral", "displayName": "Pale Paper" },
+      "ivory": { "role": "neutral", "displayName": "Ivory" },
+      "header-muted": { "role": "neutral", "displayName": "Masthead Supporting Text" },
+      "muted": { "role": "neutral", "displayName": "Muted Green" },
+      "field": { "role": "neutral", "displayName": "Answer Paper" },
+      "field-border": { "role": "neutral", "displayName": "Answer Border" },
+      "selected": { "role": "neutral", "displayName": "Selected Answer" },
+      "progress-track": { "role": "neutral", "displayName": "Progress Track" },
+      "ochre": { "role": "secondary", "displayName": "Ochre Focus" },
+      "gold": { "role": "secondary", "displayName": "Masthead Gold" },
+      "correct": { "role": "secondary", "displayName": "Correct Answer" },
+      "error": { "role": "secondary", "displayName": "Answer Error" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Masthead Title", "purpose": "Quiz title; becomes 2rem at 700px and below." },
+      "title": { "displayName": "Question and Final Score", "purpose": "Question legend and result heading; becomes 1.4rem at 420px and below." },
+      "body": { "displayName": "Body", "purpose": "Answer labels, instructions, explanations, and summary text." },
+      "button": { "displayName": "Primary Action", "purpose": "Check, advance, and restart actions." },
+      "status": { "displayName": "Question Status", "purpose": "Question count and score, with tabular numerals." },
+      "caption": { "displayName": "Source Footer", "purpose": "Natural History Museum source credit." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "uikit-button-colors", "value": "color 0.1s ease-in-out, background-color 0.1s ease-in-out, border-color 0.1s ease-in-out", "purpose": "Existing UIkit button state changes." },
+      { "name": "uikit-radio-state", "value": "background-color 0.2s ease-in-out, border 0.2s ease-in-out", "purpose": "Existing UIkit radio selection and focus changes." },
+      { "name": "uikit-progress-fill", "value": "width 0.6s ease", "purpose": "Existing UIkit progress-fill updates." }
+    ],
+    "breakpoints": [
+      { "name": "stack-masthead", "value": "700px" },
+      { "name": "compact-question-controls", "value": "420px" },
+      { "name": "uikit-medium-gutters", "value": "640px" },
+      { "name": "uikit-wide-gutters", "value": "960px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Shared check, advance, score, and restart button; includes the UIkit color transition.",
+      "html": "<button class=\"ds-primary\" type=\"button\">Check answer</button>",
+      "css": ".ds-primary{display:inline-block;min-height:46px;padding:3px 24px;border:1px solid #173c2d;border-radius:2px;background-color:#173c2d;color:#fff9e9;font-family:\"Trebuchet MS\",sans-serif;font-size:1rem;font-weight:700;line-height:38px;text-align:center;text-transform:none;cursor:pointer;transition:color .1s ease-in-out,background-color .1s ease-in-out,border-color .1s ease-in-out}.ds-primary:hover,.ds-primary:focus{border-color:#315a3c;background-color:#315a3c;color:#fff9e9}.ds-primary:focus-visible{outline:3px solid #8b5a14;outline-offset:5px}.ds-primary:active{background-color:#243a2e}@media(max-width:420px){.ds-primary{width:100%}}"
+    },
+    {
+      "name": "Selected Answer Row",
+      "kind": "input",
+      "refersTo": "answer-option-selected",
+      "description": "Selected full-width radio label. UIkit's radio base and checked dot are included inline.",
+      "html": "<label class=\"ds-answer ds-selected\"><input class=\"ds-radio\" type=\"radio\" name=\"ds-dinosaur\" value=\"Triceratops\" checked><span>Triceratops</span></label>",
+      "css": ".ds-answer{display:flex;align-items:center;gap:14px;min-height:48px;padding:5px 16px;border:1px solid #75836c;background-color:#fffdf6;color:#243a2e;font-family:\"Trebuchet MS\",sans-serif;font-size:16px;line-height:1.6;cursor:pointer}.ds-answer:hover,.ds-answer.ds-selected{border-color:#315a3c;background-color:#e1e8d7}.ds-answer:focus-within{outline:3px solid #8b5a14;outline-offset:3px}.ds-radio{display:inline-block;flex-shrink:0;width:16px;height:16px;margin:0;border:1px solid #75836c;border-radius:50%;appearance:none;background-color:transparent;background-size:cover;cursor:pointer;transition:background-color .2s ease-in-out,border .2s ease-in-out}.ds-radio:focus{background-color:rgba(0,0,0,0);outline:0;border-color:#1e87f0}.ds-radio:focus-visible{outline:3px solid #8b5a14;outline-offset:5px}.ds-radio:checked,.ds-radio:checked:focus,.ds-radio:checked:disabled{border-color:#315a3c;background-color:#315a3c}.ds-radio:checked{background-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle fill='%23fff' cx='8' cy='8' r='2'/%3E%3C/svg%3E\")}.ds-radio:disabled{border-color:#75836c;background-color:#fffdf6}.ds-radio:disabled:checked{background-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle fill='%23999' cx='8' cy='8' r='2'/%3E%3C/svg%3E\")}@media(max-width:420px){.ds-answer{padding-right:12px;padding-left:12px}}"
+    },
+    {
+      "name": "Question Progress",
+      "kind": "custom",
+      "refersTo": "progress",
+      "description": "Native progress bar counts checked answers, with UIkit's existing fill transition.",
+      "html": "<progress class=\"ds-progress\" value=\"2\" max=\"5\" aria-label=\"Questions answered\"></progress>",
+      "css": ".ds-progress{display:block;width:100%;height:6px;margin:12px 0 28px;border:0;border-radius:0;overflow:hidden;background-color:#c4cdbb}.ds-progress::-webkit-progress-bar{background-color:#c4cdbb}.ds-progress::-webkit-progress-value{background-color:#315a3c;transition:width .6s ease}.ds-progress::-moz-progress-bar{background-color:#315a3c;transition:width .6s ease}"
+    },
+    {
+      "name": "Masthead Guide Link",
+      "kind": "nav",
+      "refersTo": "guide-link",
+      "description": "Gold underlined link shown on the forest masthead.",
+      "html": "<div class=\"ds-masthead\"><a class=\"ds-guide\" href=\"../Project1/index.html\">The Dinosaur Guide</a></div>",
+      "css": ".ds-masthead{background-color:#173c2d}.ds-guide{display:inline-flex;align-items:center;min-height:44px;color:#e6c36e;font-family:\"Trebuchet MS\",sans-serif;font-size:16px;line-height:1.6;text-decoration:underline;text-underline-offset:4px;white-space:nowrap}.ds-guide:hover{color:#fff9e9}.ds-guide:focus-visible{outline:3px solid #e6c36e;outline-offset:5px}"
+    },
+    {
+      "name": "Correct Answer Feedback",
+      "kind": "custom",
+      "refersTo": "feedback-correct",
+      "description": "Correctness is stated in text before the short dinosaur explanation.",
+      "html": "<p class=\"ds-feedback ds-correct\" aria-live=\"polite\" aria-atomic=\"true\">Correct! Triceratops had two horns above its eyes and one on its nose.</p>",
+      "css": ".ds-feedback{margin:20px 0;font-family:\"Trebuchet MS\",sans-serif;font-size:1rem;line-height:1.6}.ds-feedback:empty{display:none}.ds-correct{color:#245330}"
+    },
+    {
+      "name": "Unanswered Feedback",
+      "kind": "custom",
+      "refersTo": "feedback-error",
+      "description": "The error style is shared by unanswered prompts and incorrect-answer explanations.",
+      "html": "<p class=\"ds-feedback ds-error\" aria-live=\"polite\" aria-atomic=\"true\">Choose an answer before checking it.</p>",
+      "css": ".ds-feedback{margin:20px 0;font-family:\"Trebuchet MS\",sans-serif;font-size:1rem;line-height:1.6}.ds-feedback:empty{display:none}.ds-error{color:#963b26}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Natural-history field guide",
+    "overview": "The quiz carries Project1's forest masthead, pale reading surface, Trebuchet typography, and flat controls into a compact question form. These rules apply to `wqe/index.html`, `style.css`, and `script.js`. The root page and Project1 keep their own systems; the quiz's surface direction remains in `.impeccable/surfaces/wqe-index-html.md`.\n\nUIkit 3.24.2 is loaded from the pinned jsDelivr stylesheet before the local CSS. It supplies the container, button, radio, fieldset, and progress foundations. Local styles supply the quiz palette and sizing. There are no new images, fonts, audio files, or other media assets.",
+    "keyCharacteristics": [
+      "Forest and ivory masthead with a gold guide link.",
+      "Trebuchet headings, readable questions, and full-width radio labels.",
+      "Flat surfaces with clear selected, focus, and answer-feedback states.",
+      "A single reading column with compact responsive spacing."
+    ],
+    "rules": [
+      { "name": "The Written Feedback Rule", "body": "Correctness and errors always have written feedback as well as color.", "section": "colors" }
+    ],
+    "dos": [
+      "Do keep Trebuchet, the forest masthead, and the pale reading surface.",
+      "Do keep native radio choices, written feedback, visible focus, and the working restart.",
+      "Do load the pinned UIkit stylesheet before the local overrides.",
+      "Do use explicit grid columns and basic HTML, CSS, and JavaScript."
+    ],
+    "donts": [
+      "Don't extend these quiz rules to the root page or Project1.",
+      "Don't add shadows, repeated rounded panels, or new media to this compact quiz.",
+      "Don't use color alone to communicate an answer result."
+    ]
+  }
+}
