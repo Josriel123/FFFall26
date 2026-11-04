@@ -28,3 +28,5 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 Check correct, incorrect, unanswered, final-score, repeat-submission, and restart states. Test keyboard operation, UIkit loading, contrast, and narrow layouts. No loading animation is needed: all questions are local and available at page load. A noscript message explains when JavaScript is unavailable.
 
 Finish review: ship, with no material visual findings across desktop, mobile, and enlarged-text captures. Browser QA passed 310 assertions with no failures or runtime errors. The mechanical detector returned no findings. The built system is recorded in DESIGN.md and .impeccable/design.json.
+
+Class-scope recheck: option handling now uses indexed loops and explicit class changes. Buttons use click events, and sections use the instructor's style.display pattern. UIkit supplies the progress colors. The updated browser suite passed 311 assertions, including keyboard use and mobile reflow. Two mobile type-size documentation advisories were resolved by recording the existing sizes as explicit tokens.

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-04T03:44:17Z",
+  "generatedAt": "2026-11-04T03:58:30Z",
   "title": "Design System: Dinosaur Quiz",
   "extensions": {
     "colorMeta": {
@@ -15,6 +15,7 @@
       "field-border": { "role": "neutral", "displayName": "Answer Border" },
       "selected": { "role": "neutral", "displayName": "Selected Answer" },
       "progress-track": { "role": "neutral", "displayName": "Progress Track" },
+      "progress-fill": { "role": "secondary", "displayName": "UIkit Progress Blue" },
       "ochre": { "role": "secondary", "displayName": "Ochre Focus" },
       "gold": { "role": "secondary", "displayName": "Masthead Gold" },
       "correct": { "role": "secondary", "displayName": "Correct Answer" },
@@ -22,10 +23,12 @@
     },
     "typographyMeta": {
       "display": { "displayName": "Masthead Title", "purpose": "Quiz title; becomes 2rem at 700px and below." },
+      "display-compact": { "displayName": "Compact Masthead Title", "purpose": "Quiz title at 700px and below." },
       "title": { "displayName": "Question and Final Score", "purpose": "Question legend and result heading; becomes 1.4rem at 420px and below." },
+      "title-compact": { "displayName": "Compact Question and Final Score", "purpose": "Question legend and result heading at 420px and below." },
       "body": { "displayName": "Body", "purpose": "Answer labels, instructions, explanations, and summary text." },
       "button": { "displayName": "Primary Action", "purpose": "Check, advance, and restart actions." },
-      "status": { "displayName": "Question Status", "purpose": "Question count and score, with tabular numerals." },
+      "status": { "displayName": "Question Status", "purpose": "Question count and score." },
       "caption": { "displayName": "Source Footer", "purpose": "Natural History Museum source credit." }
     },
     "shadows": [],
@@ -62,9 +65,9 @@
       "name": "Question Progress",
       "kind": "custom",
       "refersTo": "progress",
-      "description": "Native progress bar counts checked answers, with UIkit's existing fill transition.",
+      "description": "Native progress bar counts checked answers, with UIkit's default track, fill, and existing fill transition.",
       "html": "<progress class=\"ds-progress\" value=\"2\" max=\"5\" aria-label=\"Questions answered\"></progress>",
-      "css": ".ds-progress{display:block;width:100%;height:6px;margin:12px 0 28px;border:0;border-radius:0;overflow:hidden;background-color:#c4cdbb}.ds-progress::-webkit-progress-bar{background-color:#c4cdbb}.ds-progress::-webkit-progress-value{background-color:#315a3c;transition:width .6s ease}.ds-progress::-moz-progress-bar{background-color:#315a3c;transition:width .6s ease}"
+      "css": ".ds-progress{display:block;width:100%;height:6px;margin:12px 0 28px;border:0;border-radius:0;overflow:hidden;background-color:#f8f8f8}.ds-progress::-webkit-progress-bar{background-color:transparent}.ds-progress::-webkit-progress-value{background-color:#1e87f0;transition:width .6s ease}.ds-progress::-moz-progress-bar{background-color:#1e87f0;transition:width .6s ease}"
     },
     {
       "name": "Masthead Guide Link",

@@ -37,6 +37,7 @@ const quizForm = document.getElementById("quiz-form");
 const question = document.getElementById("question");
 const options = document.getElementById("options");
 const answerInputs = document.querySelectorAll('input[name="option"]');
+const answerLabels = document.getElementsByClassName("answer-option");
 const questionNumber = document.getElementById("question-number");
 const progress = document.getElementById("progress");
 const scoreText = document.getElementById("score");
@@ -58,28 +59,29 @@ function showQuestion() {
     feedback.className = "feedback";
     options.disabled = false;
     answered = false;
-    checkButton.hidden = false;
-    nextButton.hidden = true;
+    checkButton.style.display = "inline-block";
+    nextButton.style.display = "none";
 
-    answerInputs.forEach(function(input) {
-        input.checked = false;
-        input.parentElement.classList.remove("selected");
-    });
+    for (let i = 0; i < answerInputs.length; i++) {
+        answerInputs[i].checked = false;
+        answerLabels[i].classList.remove("selected");
+    }
 }
 
-answerInputs.forEach(function(input) {
-    input.addEventListener("change", function() {
-        answerInputs.forEach(function(option) {
-            option.parentElement.classList.toggle("selected", option.checked);
-        });
-        feedback.textContent = "";
-        feedback.className = "feedback";
-    });
+quizForm.addEventListener("change", function() {
+    for (let i = 0; i < answerInputs.length; i++) {
+        if (answerInputs[i].checked) {
+            answerLabels[i].classList.add("selected");
+        } else {
+            answerLabels[i].classList.remove("selected");
+        }
+    }
+
+    feedback.textContent = "";
+    feedback.className = "feedback";
 });
 
-quizForm.addEventListener("submit", function(event) {
-    event.preventDefault();
-
+checkButton.addEventListener("click", function() {
     if (answered) {
         return;
     }
@@ -106,8 +108,8 @@ quizForm.addEventListener("submit", function(event) {
     options.disabled = true;
     scoreText.textContent = score + " correct";
     progress.value = currentQuestion + 1;
-    checkButton.hidden = true;
-    nextButton.hidden = false;
+    checkButton.style.display = "none";
+    nextButton.style.display = "inline-block";
 
     if (currentQuestion === qa.length - 1) {
         nextButton.textContent = "See my score";
@@ -127,8 +129,8 @@ nextButton.addEventListener("click", function() {
         showQuestion();
         question.focus();
     } else {
-        quizSection.hidden = true;
-        summarySection.hidden = false;
+        quizSection.style.display = "none";
+        summarySection.style.display = "block";
         finalScore.textContent = "You got " + score + " out of " + qa.length + ".";
 
         if (score === qa.length) {
@@ -144,12 +146,12 @@ nextButton.addEventListener("click", function() {
 restartButton.addEventListener("click", function() {
     currentQuestion = 0;
     score = 0;
-    summarySection.hidden = true;
-    quizSection.hidden = false;
+    summarySection.style.display = "none";
+    quizSection.style.display = "block";
     nextButton.textContent = "Next question";
     showQuestion();
     question.focus();
 });
 
 showQuestion();
-quizSection.hidden = false;
+quizSection.style.display = "block";

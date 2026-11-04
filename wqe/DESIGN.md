@@ -12,7 +12,8 @@ colors:
   field: "#fffdf6"
   field-border: "#75836c"
   selected: "#e1e8d7"
-  progress-track: "#c4cdbb"
+  progress-track: "#f8f8f8"
+  progress-fill: "#1e87f0"
   ochre: "#8b5a14"
   gold: "#e6c36e"
   correct: "#245330"
@@ -23,9 +24,19 @@ typography:
     fontSize: "2.4rem"
     fontWeight: 700
     lineHeight: 1.15
+  display-compact:
+    fontFamily: "Trebuchet MS, sans-serif"
+    fontSize: "2rem"
+    fontWeight: 700
+    lineHeight: 1.15
   title:
     fontFamily: "Trebuchet MS, sans-serif"
     fontSize: "1.65rem"
+    fontWeight: 700
+    lineHeight: 1.3
+  title-compact:
+    fontFamily: "Trebuchet MS, sans-serif"
+    fontSize: "1.4rem"
     fontWeight: 700
     lineHeight: 1.3
   body:
@@ -101,18 +112,19 @@ UIkit 3.24.2 is loaded from the pinned jsDelivr stylesheet before the local CSS.
 
 ## Colors
 
-All fifteen hex colors from `style.css` are recorded in the frontmatter.
+All fourteen hex colors from `style.css` are recorded in the frontmatter, along with UIkit's inherited progress track and fill colors.
 
 ### Primary
 
 - **Forest:** masthead, headings, primary buttons, and hovered body links.
-- **Action hover:** button hover and focus fill, selected radio fill and border, progress fill, and body links.
+- **Action hover:** button hover and focus fill, selected radio fill and border, and body links.
 
 ### Secondary
 
 - **Ochre:** focus outlines on the pale reading surface.
 - **Gold:** masthead link, its focus outline, and text selection background.
 - **Correct / Error:** written answer feedback, including the unanswered warning.
+- **Progress fill:** UIkit's default blue for checked-answer progress.
 
 ### Neutral
 
@@ -121,13 +133,13 @@ All fifteen hex colors from `style.css` are recorded in the frontmatter.
 - **Muted:** instructions, question count, score, and source footer.
 - **Field / Field border:** unselected answer background and control borders.
 - **Selected:** hovered and selected answer background.
-- **Progress track:** the unfilled progress bar.
+- **Progress track:** UIkit's default pale gray for the unfilled progress bar.
 
 **The Written Feedback Rule.** Correctness and errors always have written feedback as well as color.
 
 ## Typography
 
-Trebuchet MS with a sans-serif fallback is used throughout. Bold titles and buttons establish hierarchy without another font. The display title becomes 2rem at 700px and below. Question and final-score titles become 1.4rem at 420px and below. Status text uses tabular numerals; the footer uses the smaller caption role. Header supporting copy is limited to 36ch; summary paragraphs are limited to 65ch.
+Trebuchet MS with a sans-serif fallback is used throughout. Bold titles and buttons establish hierarchy without another font. The display title becomes 2rem at 700px and below. Question and final-score titles become 1.4rem at 420px and below. The footer uses the smaller caption role. Header supporting copy is limited to 340px; summary paragraphs are limited to 700px.
 
 ## Layout
 
@@ -159,7 +171,7 @@ The masthead has one underlined guide link with a 44px minimum height. It turns 
 
 ### Progress and feedback
 
-The progress bar is 6px tall, with a pale track and green fill. Its value counts checked answers rather than the currently displayed question. Empty feedback takes no space. Checking an answer reveals a short explanation, locks the choices, and moves focus to the next action. The final score replaces the question section; restarting resets the score, choices, feedback, and progress. A noscript message explains the JavaScript requirement.
+The progress bar is 6px tall, with UIkit's pale gray track and blue fill. Local CSS changes only its height, margins, and corner radius. Its value counts checked answers rather than the currently displayed question. Empty feedback takes no space. Checking an answer reveals a short explanation, locks the choices, and moves focus to the next action. The final score replaces the question section; restarting resets the score, choices, feedback, and progress. A noscript message explains the JavaScript requirement.
 
 ## Do's and Don'ts
 

@@ -25,7 +25,7 @@
             <p class="feedback error">This quiz needs JavaScript. Enable it in your browser and reload the page to play.</p>
         </noscript>
 
-        <section id="quiz-section" class="quiz-content" aria-label="Dinosaur questions" hidden>
+        <section id="quiz-section" class="quiz-content" aria-label="Dinosaur questions">
             <div class="quiz-status">
                 <p id="question-number">Question 1 of 5</p>
                 <p id="score">0 correct</p>
@@ -60,17 +60,17 @@
                         </label>
                     </div>
                 </fieldset>
-
-                <p id="feedback" class="feedback" aria-live="polite" aria-atomic="true"></p>
-
-                <div class="quiz-actions">
-                    <button id="check-answer" class="uk-button uk-button-primary" type="submit">Check answer</button>
-                    <button id="next-question" class="uk-button uk-button-primary" type="button" hidden>Next question</button>
-                </div>
             </form>
+
+            <p id="feedback" class="feedback" aria-live="polite" aria-atomic="true"></p>
+
+            <div class="quiz-actions">
+                <button id="check-answer" class="uk-button uk-button-primary" type="button">Check answer</button>
+                <button id="next-question" class="uk-button uk-button-primary" type="button">Next question</button>
+            </div>
         </section>
 
-        <section id="summary-section" class="quiz-content" aria-labelledby="final-score" hidden>
+        <section id="summary-section" class="quiz-content" aria-labelledby="final-score">
             <h2 id="final-score" tabindex="-1"></h2>
             <p id="summary-message"></p>
             <p>You can play again or read more in the <a href="../Project1/index.html">Dinosaur Guide</a>.</p>
